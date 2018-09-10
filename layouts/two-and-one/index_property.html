@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Filing: Sprinklers</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
+  <link rel="stylesheet" type="text/css" href="keen-dashboards.css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<style>
+.heading {
+	font-size: 32px;
+	font-weight: bold;
+	color: #46A7DD;	
+
+}
+.heading_milestones {
+	font-size: 26px;
+	font-weight: bold;
+	color: rgb(100,100,100);	
+	padding-left: 20px;
+	padding-top: 20px;
+
+}
+.navbar-brand-subheading {
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
+	color: #002878;
+
+}
+body {
+	background-color: white;
+}
+
+#chart-01{
+    box-sizing: border-box;
+    width: 100%;
+	height: 460px;
+    <!-- border: 0.5px solid gray; -->
+    float: left;
+	background-color: white;
+	<!-- margin: 0px 0px 12px; -->
+}
+#chart-02{
+    box-sizing: border-box;
+    width: 100%;
+	height: 100%;
+    <!-- border: 0.5px solid gray; -->
+    <!-- float: left; -->
+	background-color: white;
+	<!-- margin: 0px 0px 12px; -->
+}
+#summary1{
+	font-size: 32px;
+	font-weight: bold;
+	<!-- color: #002878; -->	
+	text-align: center;
+	<!-- line-height: 150%; -->
+	
+}
+#summary1txt{
+	font-size: 32px;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+	<!-- line-height: 97%; -->
+	padding-top: 10px;
+}
+#summary2{
+	font-size: 26px;
+	font-weight: bold;
+	<!-- color: #002878; -->
+	text-align: center;
+	<!-- line-height: 150%; -->	
+}
+#summary2txt{
+	font-size: 26px;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+	<!-- line-height: 97%; -->
+	padding-top: 10px;
+}
+#summary3{
+	font-size: 18px;
+	<!-- color: #002878; -->	
+	text-align: center;
+	line-height: 110%;
+}
+#summary3txt{
+	font-size: 18px;
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 110%;
+	padding-top: 10px;
+}
+#summary4{
+	font-size: 18px;
+	<!-- color: #002878; -->
+	text-align: center;
+	line-height: 150%;
+}
+#summary4txt{
+	font-size: 18px;	
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 150%;
+	padding-top: 10px;
+}
+#summary5{
+	font-size: 18px;
+	<!-- color: #002878; -->
+	text-align: center;
+	line-height: 150%;
+}
+#summary5txt{
+	font-size: 18px;
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 150%;
+	padding-top: 10px;
+}
+#summary6{
+	font-size: 18px;
+	<!-- color: #002878;	 -->	
+	text-align: center;
+	line-height: 150%;
+}
+#summary6txt{
+	font-size: 18px;
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 150%;
+	padding-top: 10px;
+}
+#summary7{
+	font-size: 18px;
+	<!-- color: #002878;	 -->	
+	text-align: center;
+	line-height: 150%;
+}
+#summary7txt{
+	font-size: 18px;
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 150%;
+	padding-top: 10px;
+}
+#summary8{
+	font-size: 18px;
+	<!-- color: #002878;	 -->
+	text-align: center;
+	line-height: 150%;
+}
+#summary8txt{
+	font-size: 18px;
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 150%;
+	padding-top: 10px;
+}
+
+.timeline {
+  position: relative;
+  width: 660px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 1em 0;
+  list-style-type: none;
+}
+
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  content: ' ';
+  display: block;
+  width: 6px;
+  height: 100%;
+  margin-left: -3px;
+  background: rgb(230,230,230);  
+  z-index: 5;
+}
+
+.timeline li {
+  padding: 1em 0;
+}
+
+.timeline li:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.direction-l {
+  position: relative;
+  width: 300px;
+  float: left;
+  text-align: right;
+}
+
+.direction-r {
+  position: relative;
+  width: 300px;
+  float: right;
+}
+
+.flag-wrapper {
+  position: relative;
+  display: inline-block;
+  
+  text-align: center;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: rgb(240,240,240);
+  padding: 6px 10px;
+  border-radius: 5px;
+  
+  font-weight: 600;
+  text-align: left;
+  color: rgb(150,150,150);
+}
+
+.li.complete .flag {
+  position: relative;
+  display: inline;
+  background: rgb(152,230,0);
+  padding: 6px 10px;
+  border-radius: 5px;
+  
+  font-weight: 800;
+  text-align: left;
+  color: rgb(15,15,15);
+}
+
+.direction-l .flag {
+  -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+
+.direction-r .flag {
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: 50%;
+  right: -39px;
+  content: ' ';
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-top: -10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 4px solid rgb(230,230,230);
+  z-index: 10;
+}
+
+.direction-r .flag:before {
+  left: -39px;
+}
+
+.li.complete .direction-l .flag:before,
+.li.complete .direction-r .flag:before {
+  position: absolute;
+  top: 50%;
+  right: -39px;
+  content: ' ';
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-top: -10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 4px solid rgb(152,230,0);
+  z-index: 10;
+}
+
+.li.complete .direction-r .flag:before {
+  left: -39px;
+}
+
+.li.complete .date {
+	font-weight: 1000;
+	color: rgb(168,0,0);
+}
+
+.direction-l .flag:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-left-color: rgb(240,240,240);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.direction-r .flag:after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-right-color: rgb(240,240,240);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+
+
+.li.complete .direction-l .flag:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-left-color: rgb(152,230,0);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.li.complete .direction-r .flag:after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-right-color: rgb(152,230,0);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+
+
+
+.time-wrapper {
+  display: inline;
+  
+  line-height: 1em;
+  font-size: 0.66666em;
+  color: rgb(250,80,80);
+  vertical-align: middle;
+}
+
+.direction-l .time-wrapper {
+  float: left;
+}
+
+.direction-r .time-wrapper {
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  padding: 4px 6px;
+  background: rgb(248,248,248);
+}
+
+.desc {
+  margin: 1em 0.75em 0 0;
+  
+  font-size: 0.77777em;
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+.direction-r .desc {
+  margin: 1em 0 0 0.75em;
+}
+/* ================ Timeline Media Queries ================ */
+
+@media screen and (max-width: 660px) {
+
+.timeline {
+ 	width: 100%;
+	padding: 4em 0 1em 0;
+}
+
+.timeline li {
+	padding: 2em 0;
+}
+
+.direction-l,
+.direction-r {
+	float: none;
+	width: 100%;
+
+	text-align: center;
+}
+
+.flag-wrapper {
+	text-align: center;
+}
+
+.flag {
+	background: rgb(255,255,255);
+	z-index: 15;
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: -30px;
+	left: 50%;
+	content: ' ';
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin-left: -9px;
+	background: #fff;
+	border-radius: 10px;
+	border: 4px solid rgb(255,80,80);
+	z-index: 10;
+}
+
+.direction-l .flag:after,
+.direction-r .flag:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: -8px;
+	height: 0;
+	width: 0;
+	margin-left: -8px;
+	border: solid transparent;
+	border-bottom-color: rgb(255,255,255);
+	border-width: 8px;
+	pointer-events: none;
+}
+
+.time-wrapper {
+	display: block;
+	position: relative;
+	margin: 4px 0 0 0;
+	z-index: 14;
+}
+
+.direction-l .time-wrapper {
+	float: none;
+}
+
+.direction-r .time-wrapper {
+	float: none;
+}
+
+.desc {
+	position: relative;
+	margin: 1em 0 0 0;
+	padding: 1em;
+	background: rgb(245,245,245);
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	
+  z-index: 15;
+}
+
+.direction-l .desc,
+.direction-r .desc {
+	position: relative;
+	margin: 1em 1em 0 1em;
+	padding: 1em;
+	
+  z-index: 15;
+}
+
+}
+
+@media screen and (min-width: 400px ?? max-width: 660px) {
+
+.direction-l .desc,
+.direction-r .desc {
+	margin: 1em 4em 0 4em;
+}
+
+}
+
+
+
+<!-- HORIZONTAL TIMELINE -->
+<!-- .timeline { -->
+  <!-- list-style-type: none; -->
+  <!-- display: flex; -->
+  <!-- align-items: center; -->
+  <!-- justify-content: center; -->
+  <!-- padding-top: 70px; -->
+<!-- } -->
+
+<!-- .li { -->
+  <!-- transition: all 200ms ease-in; -->
+<!-- } -->
+
+<!-- .timestamp { -->
+  <!-- margin-bottom: 20px; -->
+  <!-- padding: 0px 40px; -->
+  <!-- display: flex; -->
+  <!-- flex-direction: column; -->
+  <!-- align-items: center; -->
+  <!-- font-weight: 100; -->
+<!-- } -->
+
+<!-- .status { -->
+  <!-- padding: 0px 40px; -->
+  <!-- display: flex; -->
+  <!-- justify-content: center; -->
+  <!-- border-top: 3px solid #D6DCE0; -->
+  <!-- position: relative; -->
+  <!-- transition: all 200ms ease-in; -->
+<!-- } -->
+<!-- .status h4 { -->
+  <!-- font-weight: 600; -->
+  <!-- text-align: center; -->
+  <!-- color: #bfc0c1 -->
+<!-- } -->
+<!-- .status:before { -->
+  <!-- content: ""; -->
+  <!-- width: 25px; -->
+  <!-- height: 25px; -->
+  <!-- background-color: white; -->
+  <!-- border-radius: 25px; -->
+  <!-- border: 1px solid #ddd; -->
+  <!-- position: absolute; -->
+  <!-- top: -15px; -->
+  <!-- left: 42%; -->
+  <!-- transition: all 200ms ease-in; -->
+<!-- } -->
+
+<!-- .li.complete .status { -->
+
+  <!-- border-top: 3px solid #D6DCE0; -->
+<!-- } -->
+<!-- .li.complete .status:before { -->
+  <!-- background-color: #66DC71; -->
+  <!-- border: none; -->
+  <!-- transition: all 200ms ease-in; -->
+<!-- } -->
+<!-- .li.complete .status h4 { -->
+  <!-- color: #66DC71; -->
+  <!-- text-align: center; -->
+<!-- } -->
+
+<!-- @media (min-device-width: 320px) and (max-device-width: 700px) { -->
+  <!-- .timeline { -->
+    <!-- list-style-type: none; -->
+    <!-- display: block; -->
+  <!-- } -->
+
+  <!-- .li { -->
+    <!-- transition: all 200ms ease-in; -->
+    <!-- display: flex; -->
+    <!-- width: inherit; -->
+  <!-- } -->
+
+  <!-- .timestamp { -->
+    <!-- width: 100px; -->
+  <!-- } -->
+
+  <!-- .status:before { -->
+    <!-- left: -8%; -->
+    <!-- top: 30%; -->
+    <!-- transition: all 200ms ease-in; -->
+  <!-- } -->
+<!-- } -->
+</style>
+<body class="application">
+
+	  <div class="heading">
+		<!-- ACTIVE PERMITS RISK SCREENING TOOL (AS OF <span id="today"></span>) -->
+		DOB NOW JOB FILING: SPRINKLERS
+	  </div>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-stage">
+            <!-- <iframe width="100%" height="445px" frameborder="0" src="https://nycdob.github.io/D3_ActivePermits_Risk/"></iframe> -->
+			<iframe id="propmap" width="100%" height="445px" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <!-- <div class="chart-title"> -->
+                <!-- Cell Title -->
+              <!-- </div> -->
+              <div class="chart-stage" id="chart-01">
+                <div id="summary1txt" ><span id="summary1"></span></div>
+				<div id="summary2txt" ><span id="summary2"></span></div>
+				<hr>
+				<div id="summary3txt" >JOB NUMBER: <span id="summary3"></span></div>
+				<div id="summary4txt" >BIN NUMBER: <span id="summary4"></span></div>
+				<div id="summary5txt" >WORK TYPE: <span id="summary5"></span></div>
+				<div id="summary6txt" >PROFESSIONAL CERTIFICATE: <span id="summary6"></span></div>
+				<div id="summary7txt" >FILING STATUS: <span id="summary7"></span></div>
+				<div id="summary8txt" >JOB DESCRIPTION: <span id="summary8"></span></div>
+              </div>
+              <!-- <div class="chart-notes"> -->
+                <!-- Notes about this chart -->
+              <!-- </div> -->
+            </div>
+          </div>
+    </div>
+
+	<!-- <hr> -->
+
+<!-- <p class="small text-muted">Built by DOB Analytics </p> -->
+
+<!-- </div> -->
+<div class="container-fluid">
+    <div class="row">
+		<div class="col-sm-6">
+			<div class="chart-wrapper">
+			  <div class="chart-stage">
+				<!-- <iframe width="100%" height="445px" frameborder="0" src="https://roadview.planninglabs.nyc/view/-73.982261/40.675606"></iframe> -->
+				<iframe id="cyclo" width="100%" height="445px" frameborder="0"></iframe>
+			  </div>
+			</div>
+		</div>
+
+      <div class="col-sm-6">
+
+        <div class="chart-wrapper">
+		<div class="heading_milestones">MILESTONES</div>
+		
+          <div class="chart-stage" id="chart-02">
+            
+			<ul class="timeline">
+
+				<!-- Date 1 -->
+				<li class="li" id="date1">
+					<div class="direction-r">
+						<div class="flag-wrapper">
+							<span class="flag">Filing Date: <span class="date" id="filingDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+			  
+				<!-- Date 2 -->
+				<li class="li" id="date2">
+					<div class="direction-l">
+						<div class="flag-wrapper">
+							<span class="flag">CPE Assigned Date: <span class="date" id="cpeAssignedDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+
+				<!-- Date 3 -->
+				<li class="li" id="date3">
+					<div class="direction-r">
+						<div class="flag-wrapper">
+							<span class="flag">CPE Action Date: <span class="date" id="cpeActionDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+
+				<!-- Date 4 -->
+				<li class="li" id="date4">
+					<div class="direction-l">
+						<div class="flag-wrapper">
+							<span class="flag">PE Assigned Date: <span class="date" id="peAssignedDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+			  
+				<!-- Date 5 -->
+				<li class="li" id="date5">
+					<div class="direction-r">
+						<div class="flag-wrapper">
+							<span class="flag">First Objection Date: <span class="date" id="firstObjectionDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+
+				<!-- Date 6 -->
+				<li class="li" id="date6">
+					<div class="direction-l">
+						<div class="flag-wrapper">
+							<span class="flag">Latest Objection Date: <span class="date" id="latestObjectionDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+				
+				<!-- Date 7 -->
+				<li class="li" id="date7">
+					<div class="direction-r">
+						<div class="flag-wrapper">
+							<span class="flag">Latest Resubmit Date: <span class="date" id="latestResubmitDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+
+				<!-- Date 8 -->
+				<li class="li" id="date8">
+					<div class="direction-l">
+						<div class="flag-wrapper">
+							<span class="flag">Plan Approved Date: <span class="date" id="planApprovedDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+			  
+				<!-- Date 9 -->
+				<li class="li" id="date9">
+					<div class="direction-r">
+						<div class="flag-wrapper">
+							<span class="flag">Permit Issued Date: <span class="date" id="permitIssuedDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+
+				<!-- Date 10 -->
+				<li class="li" id="date10">
+					<div class="direction-l">
+						<div class="flag-wrapper">
+							<span class="flag">Permit Signed Off Date: <span class="date" id="permitSignedOffDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
+			  
+			</ul>		
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- <script type="text/javascript" src="../../assets/lib/jquery/dist/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- <script type="text/javascript" src="../../assets/lib/holderjs/holder.js"></script> -->
+  <!-- <script> -->
+    <!-- Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 }); -->
+  <!-- </script> -->
+
+  <!-- <script type="text/javascript" src="../../assets/lib/keen-js/dist/keen.min.js"></script> -->
+  <script type="text/javascript" src="keen.min.js"></script>
+  <!-- <script type="text/javascript" src="../../assets/js/meta.js"></script> -->
+  <script type="text/javascript" src="meta.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://d3js.org/d3-time.v1.min.js"></script>
+  <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+
+<script>
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1;
+	var yyyy = today.getFullYear();
+	today = mm + '/' + dd + '/' + yyyy;	
+	d3.select("#today").html(today);
+	
+	var cycloProperty;
+	var mapProperty;
+	<!-- window.onload = function(){ -->
+	<!-- document.write('<iframe id="cyclo" width="100%" height="445px" frameborder="0" src="' +cycloProperty+ '"></iframe>'); -->
+	<!-- }; -->
+	//$('#cyclo').attr('src', cycloProperty);
+	function cycloCoordinates(longitude, latitude){
+		cycloProperty = "https://roadview.planninglabs.nyc/view/" + longitude + "/" + latitude;
+		document.getElementById("cyclo").setAttribute("src", cycloProperty);
+		mapProperty = "https://nycdob.github.io/Maps/leafletMap.html?coords=" + latitude + "," + longitude + "&zoom=18";
+		document.getElementById("propmap").setAttribute("src", mapProperty);
+	}
+	/*
+	var myFileUri = "https://raw.githubusercontent.com/NYCDOB/D3_ActivePermits_Risk/gh-pages/data/SiteSafetyAutomationOutput.csv";
+	alertCsvCount(myFileUri);
+
+	function alertCsvCount(myFileUri){
+	  //get file with jQuery
+	  $.get(myFileUri, function(data) {
+	  var lineCount = data.split('\n').length;
+	  //output it
+	  $(".rowcount").html(lineCount);
+	  console.log(lineCount);
+	  d3.select("#summary1").html(lineCount);
+	  })
+	}
+	*/
+	d3.csv("https://raw.githubusercontent.com/NYCDOB/DOB_Dashboards/gh-pages/demo-data/sprinklers.csv", function(d){
+		return {
+			jobnumber : d["Job Number"],
+			bin : +d.Bin,
+			address : d.Address,
+			borough : d.Borough,
+			longitude : +d.Longitude,
+			latitude : +d.Latitude,
+			profCert : +d.ProfessionalCertificate,
+			filingStatus : d["Filing Status"],
+			signOffDate : d.SignoffDate,
+			workType : d["Work Type Name"],
+			filingDate : d["Filing Date"],	
+			cpeAssignedDate : d["CPE Assigned Date"],
+			cpeActionDate : d["CPE Action Date"],
+			peAssignedDate: d["PE Assigned Date"],
+			firstObjectionDate : d["First Objection Date"],
+			latestObjectionDate : d["Latest Objections Date"],
+			latestResubmitDate: d["Latest Resubmit Date"],
+			planApprovedDate : d["Plan Approved Date"],
+			permitIssuedDate : d["Permit Issued Date"],
+			permitSignedOffDate : d["Permit Signed Off Date"]			
+		};
+	}, function (data){		
+				var selectJob = "M00024968-I1";
+				var dateFormat = d3.time.format("%m/%d/%Y");
+
+				var filteredData = data.filter(function(d){
+					return d.jobnumber == selectJob;				
+				});
+				var address_txt = filteredData[0].address;
+				    bin_txt = filteredData[0].bin;
+					boro_txt = filteredData[0].borough;
+					long_txt = filteredData[0].longitude;
+					lat_txt = filteredData[0].latitude;
+					worktype_txt = filteredData[0].workType;
+					profcert_txt = filteredData[0].profCert;
+					filingStatus_txt = filteredData[0].filingStatus;
+					
+					filingDate_txt = filteredData[0].filingDate;
+					filingDateFormat = new Date(filingDate_txt);
+					
+					cpeAssignedDate_txt = filteredData[0].cpeAssignedDate;
+					cpeAssignedDateFormat = new Date(cpeAssignedDate_txt);
+					
+					cpeActionDate_txt = filteredData[0].cpeActionDate;
+					cpeActionDateFormat = new Date(cpeActionDate_txt);
+					
+					peAssignedDate_txt = filteredData[0].peAssignedDate;
+					peAssignedDateFormat = new Date(peAssignedDate_txt);
+					
+					firstObjectionDate_txt = filteredData[0].firstObjectionDate;
+					firstObjectionDateFormat = new Date(firstObjectionDate_txt);
+					
+					latestObjectionDate_txt = filteredData[0].latestObjectionDate;
+					latestObjectionDateFormat = new Date(latestObjectionDate_txt);
+					
+					latestResubmitDate_txt = filteredData[0].latestResubmitDate;
+					latestResubmitDateFormat = new Date(latestResubmitDate_txt);
+					
+					planApprovedDate_txt = filteredData[0].planApprovedDate;
+					planApprovedDateFormat = new Date(planApprovedDate_txt);
+					
+					permitIssuedDate_txt = filteredData[0].permitIssuedDate;
+					permitIssuedDateFormat = new Date(permitIssuedDate_txt);
+					
+					permitSignedOffDate_txt = filteredData[0].permitSignedOffDate;
+					permitSignedOffDateFormat = new Date(permitSignedOffDate_txt);					
+				
+				d3.select("#summary1").html(address_txt);
+				d3.select("#summary2").html(boro_txt);
+				d3.select("#summary3").html(selectJob);
+				d3.select("#summary4").html(bin_txt);
+				d3.select("#summary5").html(worktype_txt);
+				d3.select("#summary6").html(profcert_txt);
+				d3.select("#summary7").html(filingStatus_txt);
+				
+				cycloCoordinates(long_txt,lat_txt);
+				timelineDates();
+
+			function timelineDates(){
+				var pending = "pending";
+				
+				if (!!filingDate_txt){ 
+						d3.select("#filingDateTL").html(dateFormat(filingDateFormat));
+						d3.select("#date1").attr("class", "li complete");
+						
+				} else {
+					d3.select("#filingDateTL").html(pending.italics());
+					d3.select("#date1").attr("class", "li");
+				}
+				
+				if (!!cpeAssignedDate_txt){
+						d3.select("#cpeAssignedDateTL").html(dateFormat(cpeAssignedDateFormat));
+						d3.select("#date2").attr("class", "li complete");
+					} else {
+						d3.select("#cpeAssignedDateTL").html(pending.italics());
+						d3.select("#date2").attr("class", "li");
+					}	
+				
+				if (!!cpeActionDate_txt){
+						d3.select("#cpeActionDateTL").html(dateFormat(cpeActionDateFormat));
+						d3.select("#date3").attr("class", "li complete");
+					} else {
+						d3.select("#cpeActionDateTL").html(pending.italics());
+						d3.select("#date3").attr("class", "li");
+					}					
+
+				if (!!peAssignedDate_txt){
+						d3.select("#peAssignedDateTL").html(dateFormat(peAssignedDateFormat));
+						d3.select("#date4").attr("class", "li complete");
+					} else {
+						d3.select("#peAssignedDateTL").html(pending.italics());
+						d3.select("#date4").attr("class", "li");
+					}
+					
+				if (!!firstObjectionDate_txt){
+						d3.select("#firstObjectionDateTL").html(dateFormat(firstObjectionDateFormat));
+						d3.select("#date5").attr("class", "li complete");
+					} else {
+						d3.select("#firstObjectionDateTL").html(pending.italics());
+						d3.select("#date5").attr("class", "li");
+					}
+					
+				if (!!latestObjectionDate_txt){
+						d3.select("#latestObjectionDateTL").html(dateFormat(latestObjectionDateFormat));
+						d3.select("#date6").attr("class", "li complete");
+					} else {
+						d3.select("#latestObjectionDateTL").html(pending.italics());
+						d3.select("#date6").attr("class", "li");
+					}
+					
+				if (!!latestResubmitDate_txt){
+						d3.select("#latestResubmitDateTL").html(dateFormat(latestResubmitDateFormat));
+						d3.select("#date7").attr("class", "li complete");
+					} else {
+						d3.select("#latestResubmitDateTL").html(pending.italics());
+						d3.select("#date7").attr("class", "li");
+					}
+					
+				if (!!planApprovedDate_txt){
+						d3.select("#planApprovedDateTL").html(dateFormat(planApprovedDateFormat));
+						d3.select("#date8").attr("class", "li complete");
+					} else {
+						d3.select("#planApprovedDateTL").html(pending.italics());
+						d3.select("#date8").attr("class", "li");
+					}
+					
+				if (!!permitIssuedDate_txt){
+						d3.select("#permitIssuedDateTL").html(dateFormat(permitIssuedDateFormat));
+						d3.select("#date9").attr("class", "li complete");
+					} else {
+						d3.select("#permitIssuedDateTL").html(pending.italics());
+						d3.select("#date9").attr("class", "li");
+					}					
+					
+				if (!!permitSignedOffDate_txt){
+						d3.select("#permitSignedOffDateTL").html(dateFormat(permitSignedOffDateFormat));
+						d3.select("#date10").attr("class", "li complete");
+					} else {
+						d3.select("#permitSignedOffDateTL").html(pending.italics());
+						d3.select("#date10").attr("class", "li");
+					}
+			}
+			
+				
+				<!-- d3.select("#filingDateTL").html(dateFormat(filingDateFormat)); -->
+				<!-- d3.select("#cpeAssignedDateTL").html(dateFormat(cpeAssignedDateFormat)); -->
+				<!-- d3.select("#cpeActionDateTL").html(dateFormat(cpeActionDateFormat)); -->
+				<!-- d3.select("#peAssignedDateTL").html(dateFormat(peAssignedDateFormat)); -->
+				<!-- d3.select("#firstObjectionDateTL").html(dateFormat(firstObjectionDateFormat)); -->
+				<!-- d3.select("#latestObjectionDateTL").html(dateFormat(latestObjectionDateFormat)); -->
+				
+				//console.log(JSON.stringify(dateFormat(filingDateFormat)));
+				
+			<!-- var contractor_mode = d3.nest() -->
+				<!-- .key(function(d) { return d.contractor; }) -->
+				<!-- .rollup(function(v) { return v.length; }) -->
+				<!-- .entries(data)	 -->
+				<!-- .sort(function(a, b){ return d3.descending(a.values, b.values); }); -->
+			<!-- console.log(JSON.stringify(contractor_mode)); -->
+			<!-- var contrHighFreq = contractor_mode[0].key; -->
+			<!-- var contrValHighFreq = contractor_mode[0].values; -->
+			<!-- console.log(contrHighFreq); -->
+			<!-- console.log(contrValHighFreq); -->
+			<!-- d3.select("#summary3").html(contrHighFreq); -->
+			<!-- d3.select("#summary3A").html(contrValHighFreq); -->
+			
+			<!-- var highrisk = data.filter(function(d){ -->
+				<!-- return d.score > 6; -->
+			<!-- }); -->
+			<!-- console.log(highrisk.length); -->
+			<!-- d3.select("#summary1").html(highrisk.length); -->
+			
+			<!-- var mediumrisk = data.filter(function(d){ -->
+				<!-- return d.score <7; -->
+			<!-- }); -->
+			<!-- d3.select("#summary2").html(mediumrisk.length); -->
+			
+
+			
+	}
+	
+	);
+	
+
+	
+
+
+	
+	
+
+</script>
+</body>
+</html>
