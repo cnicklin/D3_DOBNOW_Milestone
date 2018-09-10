@@ -17,7 +17,7 @@ body{
 
 		<div id="wrap">
 			<div class="container">
-            <h3>High/Medium Risk Active Permits (As of <span id="today"></span>)</h3>
+            <h3>DOB NOW Job Filings: Sprinklers</h3>
 				<table id="riskTable" class="display"></table>
 			</div>
 		</div>
@@ -43,27 +43,25 @@ $(document).ready(function() {
 
 			$('#riskTable').DataTable({
 				"ajax": {
-					"url": "https://raw.githubusercontent.com/NYCDOB/D3_ActivePermits_Risk/gh-pages/data/SiteSafetyAutomationOutput.json",
+					"url": "https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/Sprinklers.json",
 					"dataSrc": ""
 				},
 				columnDefs: [{
-					targets: 1,
+					targets: 0,
 					render: function(data,type,row,meta){
-						return '<a href="http://a810-bisweb.nyc.gov/bisweb/JobsQueryByNumberServlet?passjobnumber=' + data + '" target="_blank">' + data + '</a>';
+						//return '<a href="http://a810-bisweb.nyc.gov/bisweb/JobsQueryByNumberServlet?passjobnumber=' + data + '" target="_blank">' + data + '</a>';
+						return '<a href= "https://nycdob.github.io/D3_DOBNOW_Milestone/layouts/two-and-one/index_property#' + data +'" target="_blank">' + data + '</a>';
 					}
 				}],
 				order: [[0, "desc"]],
 				lengthChange: false,
 				pageLength: 5,
 				columns: [
-					{ 	data: "Score",
-						title: "Risk Score"
-					},
 					{ 	data: "Job Number",
 						title: "Job Number"
 					},
 
-					{ 	data: "BIN", 
+					{ 	data: "Bin", 
 						title: "BIN"
 					},
 
@@ -73,23 +71,45 @@ $(document).ready(function() {
 					{ 	data: "Borough", 
 						title: "Borough"
 					},
-					{ 	data: "Community Board", 
-						title: "Community Board"
+					{ 	data: "Work Type Name", 
+						title: "Work Type"
 					},
-					{ 	data: "Number of Permits", 
-						title: "# of Active Permits"
+					{ 	data: "Filing Status",
+						title: "Filing Status"
 					},
-					{ 	data: "Number of Stories", 
-						title: "# of Stories"
+
+					{ 	data: "Filing Date", 
+						title: "Filing Date"
 					},
-					{ 	data: "Job Type", 
-						title: "Job Type"
+
+					{ 	data: "CPE Assigned Date", 
+						title: "CPE Assigned Date"
 					},
-					{ 	data: "Contractor",
-						title: "Contractor"
+					{ 	data: "CPE Action Date", 
+						title: "CPE Action Date"
 					},
-					{ 	data: "Accidents",
-						title: "# of Accidents"
+					{ 	data: "PE Assigned Date", 
+						title: "PE Assigned Date"
+					},
+					{ 	data: "First Objection Date",
+						title: "First Objection Date"
+					},
+
+					{ 	data: "Latest Objections Date", 
+						title: "Latest Objection Date"
+					},
+
+					{ 	data: "Latest Resubmit Date", 
+						title: "Latest Resubmit Date"
+					},
+					{ 	data: "Plan Approved Date", 
+						title: "Plan Approved Date"
+					},
+					{ 	data: "Permit Issued Date", 
+						title: "Permit Issued Date"
+					},
+					{ 	data: "Permit Signed Off Date",
+						title: "Permit Signed Off Date"
 					}
 
 				]
