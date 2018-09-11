@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Job Filing: Sprinklers</title>
+  <title>Job Filing</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
@@ -680,7 +680,7 @@ body {
 		document.getElementById("propmap").setAttribute("src", mapProperty);
 	}
 
-	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/DOBNOW_JobFilings.csv", function(d){
+	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/DOBNOW_JobFilings_ALL.csv", function(d){
 		return {
 			jobnumber : d["Job Number"],
 			bin : +d.Bin,
