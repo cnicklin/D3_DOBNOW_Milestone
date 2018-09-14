@@ -747,7 +747,7 @@ body {
   <script type="text/javascript" src="keen.min.js"></script>
   <script type="text/javascript" src="meta.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="https://d3js.org/d3-time.v1.min.js"></script>
   <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
 
@@ -769,8 +769,9 @@ body {
 		document.getElementById("propmap").setAttribute("src", mapProperty);
 	}
 
-	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/DOBNOW_JobFilings_ALL_test.csv", function(d){
+	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/milestone.csv", function(d){
 		return {
+			id : d.id,
 			jobnumber : d["Job Number"],
 			bin : +d.Bin,
 			//address : d.Address,
