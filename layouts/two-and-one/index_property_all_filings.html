@@ -805,7 +805,7 @@ body {
 				var dateFormat = d3.time.format("%m/%d/%Y");
 
 				var filteredData = data.filter(function(d){
-					return d.jobnumber == selectJob;				
+					return d.key_id == selectJob;				
 				});
 				var address_txt = filteredData[0].HouseNum + ' ' + filteredData[0].Street;
 				    bin_txt = filteredData[0].bin;
