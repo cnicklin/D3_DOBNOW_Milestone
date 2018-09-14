@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Job Filing</title>
+  <title>Job Filing: Sprinklers</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
@@ -160,6 +160,15 @@ body {
 	text-align: left;
 	line-height: 150%;
 	padding-top: 10px;
+}
+#summary9{
+	font-size: 32px;
+	font-weight: bold;
+	font-style: italic;
+	color: #46A7DD;	
+}
+#summary10{
+	color: #FF0000;
 }
 
 .timeline {
@@ -505,7 +514,7 @@ body {
 
 	  <div class="heading">
 		<!-- ACTIVE PERMITS RISK SCREENING TOOL (AS OF <span id="today"></span>) -->
-		DOB NOW JOB FILING
+		DOB NOW JOB FILING: <span id="summary9"></span>
 	  </div>
 
     <div class="row">
@@ -528,7 +537,7 @@ body {
 				<div id="summary4txt" >BIN NUMBER: <span id="summary4"></span></div>
 				<div id="summary5txt" >WORK TYPE: <span id="summary5"></span></div>
 				<div id="summary6txt" >PROFESSIONAL CERTIFICATE: <span id="summary6"></span></div>
-				<div id="summary7txt" >FILING STATUS: <span id="summary7"></span></div>
+				<div id="summary7txt" >FILING STATUS: <span id="summary7"></span>  <span id="summary10"></span></div>
 				<div id="summary8txt" >JOB DESCRIPTION: <span id="summary8"></span></div>
               </div>
             </div>
@@ -645,6 +654,15 @@ body {
 						</div>			
 					</div>
 				</li>
+				
+				<!-- Date 2: PRO CERT -->
+				<li class="li" id="date2_PC">
+					<div class="direction-l">
+						<div class="flag-wrapper">
+							<span class="flag">Procert QA Supervisior Assigned Date: <span class="date" id="proCertQASuperAssignedDateTL"></span></span>
+						</div>			
+					</div>
+				</li>
 			  
 			</ul>		
           </div>
@@ -680,7 +698,7 @@ body {
 		document.getElementById("propmap").setAttribute("src", mapProperty);
 	}
 
-	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/DOBNOW_JobFilings_ALL.csv", function(d){
+	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/DOBNOW_JobFilings_ALL_test.csv", function(d){
 		return {
 			jobnumber : d["Job Number"],
 			bin : +d.Bin,
@@ -703,12 +721,15 @@ body {
 			latestObjectionDate : d["Latest Objections Date"],
 			latestResubmitDate: d["Latest Resubmit Date"],
 			planApprovedDate : d["Plan Approved Date"],
-			permitIssuedDate : d["Permit Issued Date"],
-			permitSignedOffDate : d["Permit Signed Off Date"]			
+			permitIssuedDate : d["Latest Permit Issued Date"],
+			permitSignedOffDate : d["Latest Permit Signed Off Date"],
+			proCertQASuperAssignedDate : d["Procert QA Supervisior Assigned Date"],
+			proCertQAClerkAssignedDate : d["Procert QA Clerk Assigned Date"],
+			qaFailedDate : d["QA Failed Date"]
 		};
 	}, function (data){		
-				//var selectJob = "M00024968-I1";
-				var selectJob = window.location.hash.substring(1)
+				var selectJob = "S00059678-I1";
+				//var selectJob = window.location.hash.substring(1)
 				var dateFormat = d3.time.format("%m/%d/%Y");
 
 				var filteredData = data.filter(function(d){
@@ -722,6 +743,9 @@ body {
 					worktype_txt = filteredData[0].workType;
 					profcert_txt = filteredData[0].profCert;
 					filingStatus_txt = filteredData[0].filingStatus;
+					
+					signOffDate_txt = filteredData[0].signOffDate;
+					signOffDateFormat = new Date(signOffDate_txt);
 					
 					filingDate_txt = filteredData[0].filingDate;
 					filingDateFormat = new Date(filingDate_txt);
@@ -751,7 +775,10 @@ body {
 					permitIssuedDateFormat = new Date(permitIssuedDate_txt);
 					
 					permitSignedOffDate_txt = filteredData[0].permitSignedOffDate;
-					permitSignedOffDateFormat = new Date(permitSignedOffDate_txt);					
+					permitSignedOffDateFormat = new Date(permitSignedOffDate_txt);	
+
+					proCertQASuperAssignedDate_txt = filteredData[0].proCertQASuperAssignedDate;
+					proCertQASuperAssignedDateFormat = new Date(proCertQASuperAssignedDate_txt);					
 				
 				d3.select("#summary1").html(address_txt);
 				d3.select("#summary2").html(boro_txt);
@@ -760,13 +787,26 @@ body {
 				d3.select("#summary5").html(worktype_txt);
 				d3.select("#summary6").html(profcert_txt);
 				d3.select("#summary7").html(filingStatus_txt);
+				//d3.select("#summmary8").html (JOB DESCRIPTION PLACE HOLDER);
+				d3.select("#summary9").html(worktype_txt);
+				
 				
 				cycloCoordinates(long_txt,lat_txt);
-				timelineDates();
+				//timelineDates();
+				proCertStatus();
 
+				
+				
+			function proCertStatus(){
+				if (profcert_txt == "0"){
+					timelineDates();
+				} else {
+					timelineDatesProCert();
+				}
+			}
+			//STANDARD PLAN TIMELINE	
 			function timelineDates(){
 				var pending = "pending";
-				
 				if (!!filingDate_txt){ 
 						d3.select("#filingDateTL").html(dateFormat(filingDateFormat));
 						d3.select("#date1").attr("class", "li complete");
@@ -847,19 +887,108 @@ body {
 						d3.select("#permitSignedOffDateTL").html(pending.italics());
 						d3.select("#date10").attr("class", "li");
 					}
-			}
+					
+				if (!!signOffDate_txt){
+						d3.select("#summary10").html(dateFormat(signOffDateFormat));
+					} else {
+						d3.select("#summary10").html("");
+					}			
+			}	
+
+			//PRO CERT TIMELINE
+			function timelineDatesProCert(){
+				var pendingProCert = "pending";
+				if (!!filingDate_txt){ 
+						d3.select("#filingDateTL").html(dateFormat(filingDateFormat));
+						d3.select("#date1").attr("class", "li complete");
 						
-	}
+				} else {
+					d3.select("#filingDateTL").html(pendingProCert.italics());
+					d3.select("#date1").attr("class", "li");
+				}
+				
+				if (!!proCertQASuperAssignedDate_txt){
+						d3.select("#proCertQASuperAssignedDateTL").html(dateFormat(proCertQASuperAssignedDateFormat));
+						d3.select("#date2_PC").attr("class", "li complete");
+					} else {
+						d3.select("#proCertQASuperAssignedDateTL").html(pendingProCert.italics());
+						d3.select("#date2_PC").attr("class", "li");
+					}	
+				
+				if (!!cpeActionDate_txt){
+						d3.select("#cpeActionDateTL").html(dateFormat(cpeActionDateFormat));
+						d3.select("#date3").attr("class", "li complete");
+					} else {
+						d3.select("#cpeActionDateTL").html(pendingProCert.italics());
+						d3.select("#date3").attr("class", "li");
+					}					
+
+				if (!!peAssignedDate_txt){
+						d3.select("#peAssignedDateTL").html(dateFormat(peAssignedDateFormat));
+						d3.select("#date4").attr("class", "li complete");
+					} else {
+						d3.select("#peAssignedDateTL").html(pendingProCert.italics());
+						d3.select("#date4").attr("class", "li");
+					}
+					
+				if (!!firstObjectionDate_txt){
+						d3.select("#firstObjectionDateTL").html(dateFormat(firstObjectionDateFormat));
+						d3.select("#date5").attr("class", "li complete");
+					} else {
+						d3.select("#firstObjectionDateTL").html(pendingProCert.italics());
+						d3.select("#date5").attr("class", "li");
+					}
+					
+				if (!!latestObjectionDate_txt){
+						d3.select("#latestObjectionDateTL").html(dateFormat(latestObjectionDateFormat));
+						d3.select("#date6").attr("class", "li complete");
+					} else {
+						d3.select("#latestObjectionDateTL").html(pendingProCert.italics());
+						d3.select("#date6").attr("class", "li");
+					}
+					
+				if (!!latestResubmitDate_txt){
+						d3.select("#latestResubmitDateTL").html(dateFormat(latestResubmitDateFormat));
+						d3.select("#date7").attr("class", "li complete");
+					} else {
+						d3.select("#latestResubmitDateTL").html(pendingProCert.italics());
+						d3.select("#date7").attr("class", "li");
+					}
+					
+				if (!!planApprovedDate_txt){
+						d3.select("#planApprovedDateTL").html(dateFormat(planApprovedDateFormat));
+						d3.select("#date8").attr("class", "li complete");
+					} else {
+						d3.select("#planApprovedDateTL").html(pendingProCert.italics());
+						d3.select("#date8").attr("class", "li");
+					}
+					
+				if (!!permitIssuedDate_txt){
+						d3.select("#permitIssuedDateTL").html(dateFormat(permitIssuedDateFormat));
+						d3.select("#date9").attr("class", "li complete");
+					} else {
+						d3.select("#permitIssuedDateTL").html(pendingProCert.italics());
+						d3.select("#date9").attr("class", "li");
+					}					
+					
+				if (!!permitSignedOffDate_txt){
+						d3.select("#permitSignedOffDateTL").html(dateFormat(permitSignedOffDateFormat));
+						d3.select("#date10").attr("class", "li complete");
+					} else {
+						d3.select("#permitSignedOffDateTL").html(pendingProCert.italics());
+						d3.select("#date10").attr("class", "li");
+					}
+					
+				if (!!signOffDate_txt){
+						d3.select("#summary10").html(dateFormat(signOffDateFormat));
+					} else {
+						d3.select("#summary10").html("");
+					}			
+			}			
+		}
 	
 	);
 	
-
-	
-
-
-	
-	
-
 </script>
 </body>
 </html>
