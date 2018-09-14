@@ -771,7 +771,7 @@ body {
 
 	d3.csv("https://raw.githubusercontent.com/NYCDOB/D3_DOBNOW_Milestone/gh-pages/data/DOBNOW_JobFilings_ALL_test2.csv", function(d){
 		return {
-			id : d.key_id,
+			key_id : d.key_id,
 			jobnumber : d["Job Number"],
 			bin : +d.Bin,
 			//address : d.Address,
