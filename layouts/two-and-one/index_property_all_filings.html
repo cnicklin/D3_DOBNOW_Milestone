@@ -179,7 +179,19 @@ body {
 #summary10{
 	color: #FF0000;
 }
-
+#summary11{
+	font-size: 18px;
+	<!-- color: #002878; -->
+	text-align: center;
+	line-height: 150%;
+}
+#summary11txt{
+	font-size: 18px;
+	<!-- color: #565656; -->
+	text-align: left;
+	line-height: 150%;
+	padding-top: 10px;
+}
 .timeline {
   position: relative;
   width: 660px;
@@ -545,6 +557,7 @@ body {
 				<div id="summary3txt" >JOB NUMBER: <span id="summary3"></span></div>
 				<div id="summary4txt" >BIN NUMBER: <span id="summary4"></span></div>
 				<div id="summary5txt" >WORK TYPE: <span id="summary5"></span></div>
+		      		<div id="summary11txt" >JOB TYPE: <span id="summary11"></span></div>
 				<div id="summary6txt" >PROFESSIONAL CERTIFICATE: <span id="summary6"></span></div>
 				<div id="summary7txt" >FILING STATUS: <span id="summary7"></span>  <span id="summary10"></span></div>
 				<div id="summary8txt" >JOB DESCRIPTION: <span id="summary8"></span></div>
@@ -797,7 +810,9 @@ body {
 			permitSignedOffDate : d["Latest Permit Signed Off Date"],
 			proCertQASuperAssignedDate : d["Procert QA Supervisior Assigned Date"],
 			proCertQAClerkAssignedDate : d["Procert QA Clerk Assigned Date"],
-			qaFailedDate : d["QA Failed Date"]
+			qaFailedDate : d["QA Failed Date"],
+			jobType : d["Job Type"],
+			jobDesc : d["Job Description"]
 		};
 	}, function (data){		
 				//var selectJob = "S00059678-I1";
@@ -813,8 +828,10 @@ body {
 					long_txt = filteredData[0].longitude;
 					lat_txt = filteredData[0].latitude;
 					worktype_txt = filteredData[0].workType;
+					jobType_txt = filteredData[0].jobType;
 					profcert_txt = filteredData[0].profCert;
 					filingStatus_txt = filteredData[0].filingStatus;
+					jobDesc_txt = filteredData[0].jobDesc;
 					
 					signOffDate_txt = filteredData[0].signOffDate;
 					signOffDateFormat = new Date(signOffDate_txt);
@@ -863,9 +880,10 @@ body {
 				d3.select("#summary3").html(selectJob);
 				d3.select("#summary4").html(bin_txt);
 				d3.select("#summary5").html(worktype_txt);
+				d3.select("#summary11").html(jobType_txt);
 				d3.select("#summary6").html(profcert_txt);
 				d3.select("#summary7").html(filingStatus_txt);
-				//d3.select("#summmary8").html (JOB DESCRIPTION PLACE HOLDER);
+				d3.select("#summmary8").html (jobDesc_txt);
 				d3.select("#summary9").html(worktype_txt);
 				
 				
