@@ -781,7 +781,7 @@ body {
 			borough : d.Borough,
 			longitude : +d.Longitude,
 			latitude : +d.Latitude,
-			profCert : +d.ProfessionalCertificate,
+			profCert : d.ProfessionalCertificate,
 			filingStatus : d["Filing Status"],
 			signOffDate : d.SignoffDate,
 			workType : d["Work Type Name"],
@@ -876,7 +876,7 @@ body {
 				
 				
 			function proCertStatus(){
-				if (profcert_txt == "0"){
+				if (profcert_txt == "No"){
 					timelineDates();
 				} else {
 					timelineDatesProCert();
