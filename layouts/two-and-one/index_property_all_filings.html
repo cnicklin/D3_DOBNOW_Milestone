@@ -888,6 +888,7 @@ body {
 				elemChart03.remove();
 				$('#chart-02').html();
 				var pending = "pending";
+				var na = "N/A";
 				if (!!filingDate_txt){ 
 						d3.select("#filingDateTL").html(dateFormat(filingDateFormat));
 						d3.select("#date1").attr("class", "li complete");
@@ -925,7 +926,7 @@ body {
 						d3.select("#firstObjectionDateTL").html(dateFormat(firstObjectionDateFormat));
 						d3.select("#date5").attr("class", "li complete");
 					} else {
-						d3.select("#firstObjectionDateTL").html(pending.italics());
+						d3.select("#firstObjectionDateTL").html(na.italics());
 						d3.select("#date5").attr("class", "li");
 					}
 					
@@ -933,7 +934,7 @@ body {
 						d3.select("#latestObjectionDateTL").html(dateFormat(latestObjectionDateFormat));
 						d3.select("#date6").attr("class", "li complete");
 					} else {
-						d3.select("#latestObjectionDateTL").html(pending.italics());
+						d3.select("#latestObjectionDateTL").html(na.italics());
 						d3.select("#date6").attr("class", "li");
 					}
 					
@@ -941,7 +942,7 @@ body {
 						d3.select("#latestResubmitDateTL").html(dateFormat(latestResubmitDateFormat));
 						d3.select("#date7").attr("class", "li complete");
 					} else {
-						d3.select("#latestResubmitDateTL").html(pending.italics());
+						d3.select("#latestResubmitDateTL").html(na.italics());
 						d3.select("#date7").attr("class", "li");
 					}
 					
@@ -982,6 +983,7 @@ body {
 				elemChart02.remove();
 				$('#chart-03').html();
 				var pendingProCert = "pending";
+				var naProCert = "N/A";
 				if (!!filingDate_txt){ 
 						d3.select("#filingDateTL").html(dateFormat(filingDateFormat));
 						d3.select("#date1").attr("class", "li complete");
@@ -1011,33 +1013,10 @@ body {
 						d3.select("#qaFailedDateTL").html(dateFormat(qaFailedDateFormat));
 						d3.select("#date4_PC").attr("class", "li complete");
 					} else {
-						d3.select("#qaFailedDateTL").html(pendingProCert.italics());
+						d3.select("#qaFailedDateTL").html(naProCert.italics());
 						d3.select("#date4_PC").attr("class", "li");
 					}
 					
-				if (!!qaFailedDate_txt){
-						d3.select("#qaFailedDateTL").html(dateFormat(qaFailedDateFormat));
-						d3.select("#date5").attr("class", "li complete");
-					} else {
-						d3.select("#firstObjectionDateTL").html(pendingProCert.italics());
-						d3.select("#date5").attr("class", "li");
-					}
-					
-				if (!!latestObjectionDate_txt){
-						d3.select("#latestObjectionDateTL").html(dateFormat(latestObjectionDateFormat));
-						d3.select("#date6").attr("class", "li complete");
-					} else {
-						d3.select("#latestObjectionDateTL").html(pendingProCert.italics());
-						d3.select("#date6").attr("class", "li");
-					}
-					
-				if (!!latestResubmitDate_txt){
-						d3.select("#latestResubmitDateTL").html(dateFormat(latestResubmitDateFormat));
-						d3.select("#date7").attr("class", "li complete");
-					} else {
-						d3.select("#latestResubmitDateTL").html(pendingProCert.italics());
-						d3.select("#date7").attr("class", "li");
-					}
 					
 				if (!!planApprovedDate_txt){
 						d3.select("#planApprovedDateTL").html(dateFormat(planApprovedDateFormat));
