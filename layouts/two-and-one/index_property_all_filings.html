@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Job Filing: Sprinklers</title>
+  <title>Job Filing</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
@@ -103,7 +103,7 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 110%;
-	padding-top: 10px;
+	padding-top: 8px;
 }
 #summary4{
 	font-size: 18px;
@@ -116,7 +116,7 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 150%;
-	padding-top: 10px;
+	padding-top: 8px;
 }
 #summary5{
 	font-size: 18px;
@@ -129,7 +129,7 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 150%;
-	padding-top: 10px;
+	padding-top: 8px;
 }
 #summary6{
 	font-size: 18px;
@@ -142,7 +142,7 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 150%;
-	padding-top: 10px;
+	padding-top: 8px;
 }
 #summary7{
 	font-size: 18px;
@@ -155,7 +155,7 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 150%;
-	padding-top: 10px;
+	padding-top: 8px;
 }
 #summary8{
 	font-size: 13px;
@@ -169,7 +169,7 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 150%;
-	padding-top: 10px;
+	padding-top: 8px;
 }
 #summary9{
 	font-size: 32px;
@@ -191,6 +191,21 @@ body {
 	<!-- color: #565656; -->
 	text-align: left;
 	line-height: 150%;
+	padding-top: 8px;
+}
+#summary12{
+	font-size: 18px;
+	font-weight: bold;
+	<!-- color: #002878; -->
+	text-align: center;
+	<!-- line-height: 150%; -->	
+}
+#summary12txt{
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+	<!-- line-height: 97%; -->
 	padding-top: 10px;
 }
 .timeline {
@@ -554,6 +569,7 @@ body {
               <div class="chart-stage" id="chart-01">
                 <div id="summary1txt" ><span id="summary1"></span></div>
 				<div id="summary2txt" ><span id="summary2"></span></div>
+		      		<div id="summary12txt" >COMMUNITY DISTRICT <span id="summary12"></span></div>
 				<hr>
 				<div id="summary3txt" >JOB NUMBER: <span id="summary3"></span></div>
 				<div id="summary4txt" >BIN NUMBER: <span id="summary4"></span></div>
@@ -833,6 +849,7 @@ body {
 					profcert_txt = filteredData[0].profCert;
 					filingStatus_txt = filteredData[0].filingStatus;
 					jobDesc_txt = filteredData[0].jobDesc;
+					cd_txt = filteredData[0].CD;
 					
 					signOffDate_txt = filteredData[0].signOffDate;
 					signOffDateFormat = new Date(signOffDate_txt);
@@ -886,6 +903,7 @@ body {
 				d3.select("#summary7").html(filingStatus_txt);
 				d3.select("#summary8").html (jobDesc_txt);
 				d3.select("#summary9").html(worktype_txt);
+				d3.select("#summary12").html(cd_txt);
 				
 				
 				cycloCoordinates(long_txt,lat_txt);
