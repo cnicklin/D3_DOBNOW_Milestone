@@ -575,13 +575,13 @@ body {
 				<div id="summary2txt" ><span id="summary2"></span></div>
 		      		<div id="summary12txt" >COMMUNITY DISTRICT <span id="summary12"></span></div>
 				<hr>
-				<div id="summary3txt" >JOB NUMBER: <span id="summary3"></span></div>
-				<div id="summary4txt" >BIN NUMBER: <span id="summary4"></span></div>
-				<div id="summary5txt" >WORK TYPE: <span id="summary5"></span></div>
-		      		<div id="summary11txt" >JOB TYPE: <span id="summary11"></span></div>
-				<div id="summary6txt" >PROFESSIONAL CERTIFICATION: <span id="summary6"></span></div>
-				<div id="summary7txt" >FILING STATUS: <span id="summary7"></span>  <span id="summary10"></span></div>
-				<div id="summary8txt" >JOB DESCRIPTION: <span id="summary8"></span></div>
+				<div id="summary3txt" title="The unique ID number assigned when the applicant submits the filing to the Department of Buildings.">JOB NUMBER: <span id="summary3"></span></div>
+				<div id="summary4txt" title="The Building Identification Number assigned by the Department of City Planning.">BIN NUMBER: <span id="summary4"></span></div>
+				<div id="summary5txt" title="The type of work described in this filing. It could include plumbing, sprinkler, construction fence, or another type of work. ">WORK TYPE: <span id="summary5"></span></div>
+				<div id="summary11txt" title="This indicates the extent of the work being done. NB means a new building is being built. A1 means that extensive alterations will be done resulting in a change of building occupancy. A2 means that alterations will be done but will not result in a change of building occupancy. A3 indicates that minor alterations will be done.">JOB TYPE: <span id="summary11"></span></div>
+				<div id="summary6txt" title="Yes indicates that the applicant is certifying that the work being performed complies with all applicable laws and codes. This job will then skip review by a plan examiner.">PROFESSIONAL CERTIFICATION: <span id="summary6"></span></div>
+				<div id="summary7txt" title="The current status of the filing.">FILING STATUS: <span id="summary7"></span></div>
+				<div id="summary8txt" title="The general description of the work being applied for. This field is free text, and is filled out by the applicant.">JOB DESCRIPTION: <span id="summary8"></span></div>
               </div>
             </div>
           </div>
@@ -613,7 +613,7 @@ body {
 				<li class="li" id="date1">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">Filing Date: <span class="date" id="filingDateTL"></span></span>
+							<span class="flag" title="The date that the applicant submitted the filing to the Department of Buildings.">Filing Date: <span class="date" id="filingDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -622,7 +622,7 @@ body {
 				<li class="li" id="date2">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">CPE Assigned Date: <span class="date" id="cpeAssignedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was assigned to a Chief Plan Examiner for review or for delegation to a Plan Examiner.">CPE Assigned Date: <span class="date" id="cpeAssignedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -631,7 +631,7 @@ body {
 				<li class="li" id="date3">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">CPE Action Date: <span class="date" id="cpeActionDateTL"></span></span>
+							<span class="flag" title="The date that the Chief Plan Examiner took action on the filing.">CPE Action Date: <span class="date" id="cpeActionDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -640,7 +640,7 @@ body {
 				<li class="li" id="date4">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">PE Assigned Date: <span class="date" id="peAssignedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was assigned to a Plan Examiner.">PE Assigned Date: <span class="date" id="peAssignedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -649,7 +649,7 @@ body {
 				<li class="li" id="date5">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">First Objection Date: <span class="date" id="firstObjectionDateTL"></span></span>
+							<span class="flag" title="The date that the filing was first returned to the applicant with objections. A filing may go through several cycles of being submitted, reviewed by a Plan Examiner, and returned to the applicant with objections.">First Objection Date: <span class="date" id="firstObjectionDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -658,7 +658,7 @@ body {
 				<li class="li" id="date6">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">Latest Objection Date: <span class="date" id="latestObjectionDateTL"></span></span>
+							<span class="flag" title="The most recent date that the filing was returned to the applicant with objections.">Latest Objection Date: <span class="date" id="latestObjectionDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -667,7 +667,7 @@ body {
 				<li class="li" id="date7">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">Latest Resubmit Date: <span class="date" id="latestResubmitDateTL"></span></span>
+							<span class="flag" title="The most recent date that the filing was resubmitted to the Department of Buildings for review.">Latest Resubmit Date: <span class="date" id="latestResubmitDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -676,7 +676,7 @@ body {
 				<li class="li" id="date8">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">Plan Approved Date: <span class="date" id="planApprovedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was approved. The applicant can now pull permits.">Plan Approved Date: <span class="date" id="planApprovedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -685,7 +685,7 @@ body {
 				<li class="li" id="date9">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">Latest Permit Issued Date: <span class="date" id="permitIssuedDateTL"></span></span>
+							<span class="flag" title="The most recent date that a permit was issued. Multiple permits can be issued for a job filing, and this only shows the most recent.">Latest Permit Issued Date: <span class="date" id="permitIssuedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -694,7 +694,7 @@ body {
 				<li class="li" id="date10">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">Permit Signed Off Date: <span class="date" id="permitSignedOffDateTL"></span></span>
+							<span class="flag" title="The date that the Department of Buildings signed off that the work was completed.">Permit Signed Off Date: <span class="date" id="permitSignedOffDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -710,7 +710,7 @@ body {
 				<li class="li" id="date1">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">Filing Date: <span class="date" id="filingDateTL"></span></span>
+							<span class="flag" title="The date that the applicant submitted the filing to the Department of Buildings.">Filing Date: <span class="date" id="filingDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -719,7 +719,7 @@ body {
 				<li class="li" id="date2_PC">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">QA Supervisor Assigned Date: <span class="date" id="proCertQASuperAssignedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was assigned to a QA Supervisor for review or for delegation to a QA Clerk.">QA Supervisor Assigned Date: <span class="date" id="proCertQASuperAssignedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -728,7 +728,7 @@ body {
 				<li class="li" id="date3_PC">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">QA Clerk Assigned Date: <span class="date" id="proCertQAClerkAssignedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was assigned to a QA Clerk.">QA Clerk Assigned Date: <span class="date" id="proCertQAClerkAssignedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -737,7 +737,7 @@ body {
 				<li class="li" id="date4_PC">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">QA Failed Date: <span class="date" id="qaFailedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was returned to the applicant because it was incomplete or needed correction.">QA Failed Date: <span class="date" id="qaFailedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -746,7 +746,7 @@ body {
 				<li class="li" id="date8">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">Plan Approved Date: <span class="date" id="planApprovedDateTL"></span></span>
+							<span class="flag" title="The date that the filing was approved. The applicant can now pull permits.">Plan Approved Date: <span class="date" id="planApprovedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -755,7 +755,7 @@ body {
 				<li class="li" id="date9">
 					<div class="direction-r">
 						<div class="flag-wrapper">
-							<span class="flag">Latest Permit Issued Date: <span class="date" id="permitIssuedDateTL"></span></span>
+							<span class="flag" title="The most recent date that a permit was issued. Multiple permits can be issued for a job filing, and this only shows the most recent.">Latest Permit Issued Date: <span class="date" id="permitIssuedDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
@@ -764,7 +764,7 @@ body {
 				<li class="li" id="date10">
 					<div class="direction-l">
 						<div class="flag-wrapper">
-							<span class="flag">Permit Signed Off Date: <span class="date" id="permitSignedOffDateTL"></span></span>
+							<span class="flag" title="The date that the Department of Buildings signed off that the work was completed.">Permit Signed Off Date: <span class="date" id="permitSignedOffDateTL"></span></span>
 						</div>			
 					</div>
 				</li>
