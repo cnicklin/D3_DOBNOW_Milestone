@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Example</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.17.1/ol.js"></script>
+    <script type="text/javascript" src="https://streetsmart.cyclomedia.com/api/v18.7/StreetSmartApi.js"></script>
+    <style>
+        *[disabled] {
+            opacity: 0.5;
+        }
+        html, body {
+            height: 100%; /* hꨬ belangrijk */
+            overflow: none;
+        }
+
+        .panoramaViewerWindow {
+            display: inline-block;
+            width: 100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body onload="initApi()" >
+<div id="streetsmartApi" class="panoramaViewerWindow"></div>
+<script>
+
+    function initApi() {
+        StreetSmartApi.init({
+            targetElement: document.getElementById('streetsmartApi'),
+            username: "NYCBuildingsWebApps",
+            password: "baazc3j2",
+            apiKey: "Kzkx-_INerglOPYhO3Yx-rg9OLEVeLcJuHwBq7wJ-7gR-nQtGPYl2f0x27wh2voB",
+            srs: "EPSG:2263",
+            locale: 'en-us',
+            configurationUrl: 'https://atlas.cyclomedia.com/configuration',
+            addressSettings:
+                {
+                    locale: "en",
+                    database: "Nokia"
+                }
+        }).then(
+            function() {
+                var viewerType = StreetSmartApi.ViewerType.PANORAMA
+                console.log('Api: init: success!');
+                StreetSmartApi.open("981036.341726845,194505.932904555",
+                    {
+                        viewerType: viewerType,
+                        srs: 'EPSG:2263',
+                    }).then(
+                    function(result)
+                    {
+                        console.log('Created component through API:', result);
+                        if (result)
+                        {
+                            for (let i =0; i < result.length; i++)
+                            {
+                                if(result[i].getType() === StreetSmartApi.ViewerType.PANORAMA) window.panoramaViewer = result[i];
+                            }
+                        }
+                    }.bind(this)
+                ).catch(
+                    function(reason)
+                    {
+                        console.log('Failed to create component(s) through API: ' + reason);
+                    }
+                );
+            },
+            function(err) {
+                console.log('Api: init: failed. Error: ', err);
+                alert('Api Init Failed!');
+            }
+        );
+    }
+
+
+</script>
+</body>
+</html>
