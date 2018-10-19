@@ -823,9 +823,12 @@ body {
 	var cycloProperty;
 	var mapProperty;
 
-	function cycloCoordinates(longitude, latitude){
-		cycloProperty = "https://roadview.planninglabs.nyc/view/" + longitude + "/" + latitude;
+	function cycloCoordinates(x, y){
+		cycloProperty = "https://nycdob.github.io/D3_DOBNOW_Milestone/layouts/two-and-one/simple#" + x + "," + y;
 		document.getElementById("cyclo").setAttribute("src", cycloProperty);
+	}
+	
+	function mapCoordinates(longitude, latitude){
 		mapProperty = "https://nycdob.github.io/Maps/leafletMap.html?coords=" + latitude + "," + longitude + "&zoom=18";
 		document.getElementById("propmap").setAttribute("src", mapProperty);
 	}
@@ -860,7 +863,9 @@ body {
 			proCertQAClerkAssignedDate : d["Procert QA Clerk Assigned Date"],
 			qaFailedDate : d["QA Failed Date"],
 			jobType : d["Job Type"],
-			jobDesc : d["Job Description"]
+			jobDesc : d["Job Description"],
+			X : +d.EPSG2263_x,
+			Y : +d.EPSG2263_y
 		};
 	}, function (data){		
 				//var selectJob = "S00059678-I1";
@@ -875,6 +880,8 @@ body {
 					boro_txt = filteredData[0].borough;
 					long_txt = filteredData[0].longitude;
 					lat_txt = filteredData[0].latitude;
+					x_txt = filteredData[0].X;
+					y_txt = filteredData[0].Y;
 					worktype_txt = filteredData[0].workType;
 					jobType_txt = filteredData[0].jobType;
 					profcert_txt = filteredData[0].profCert;
@@ -937,8 +944,8 @@ body {
 				d3.select("#summary12").html(cd_txt);
 				
 				
-				cycloCoordinates(long_txt,lat_txt);
-				//timelineDates();
+				cycloCoordinates(x_txt,y_txt);
+				mapCoordinates(long_txt,lat_txt);
 				proCertStatus();
 
 				
