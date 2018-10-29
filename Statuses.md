@@ -1,3 +1,4 @@
+![Alt Text](https://github.com/cnicklin/D3_DOBNOW_Milestone/gh-pages/01-dob-now-logo.jpg)
 ## DOB NOW: Build Filing Statuses
 
 After a filing is submitted in DOB NOW, it will go through one of the following timelines. For example, if the filing requires a technical review, it will be processed by a Plan Examiner, but if the applicant is submitting it as a Professional Certification, it will only need a QA review. See below for more information.
