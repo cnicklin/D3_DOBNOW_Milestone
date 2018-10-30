@@ -15,20 +15,15 @@ The New York City Department of Buildings (DOB) Building Profiles application pr
 * [D3](https://d3js.org/)
 * [Bootstrap](https://getbootstrap.com/)
 
-## Backend Processes  
+## Data Source
+
+Data flows from the BI tool to GitHub public hold. This is a daily automated process. It creates results in 2 formats: JSON (for search) and CSV (for map imaging).
+
+<img align="center" width="" height="" src="https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/Flow.PNG" alt="Milestone App Flow Diagram">
+
+## Key Milestones Date Capture 
 
 Data are extracted using R-JDBC connection protocol to OBIEE. Logical SQL is issued against tables of the OBIEE semantic layer.  Data extractions from multiple databases are cleaned, filtered, and aggregated at the building (BIN) level, merged with the NYC Building Footprints, then pushed out to Carto via automated ETL processes. 
-
-## Data Sources
-
-*	[Building Information System](http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp)
-    + Permits
-    + Complaints
-    + Violations
-*	DOB NOW Build Permits
-*	DOB NOW Inspections
-*	DOB Incident Database
-*	[NYC Building Footprints](https://github.com/CityOfNewYork/nyc-geo-metadata/blob/master/Metadata/Metadata_BuildingFootprints.md)
 
 ## Data Definitions
 ### Main Menu (12 month metrics)
