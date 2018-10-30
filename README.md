@@ -11,20 +11,34 @@ Data flows from the BI tool to GitHub public hold. This is a daily automated pro
 <img align="center" width="" height="" src="https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/Flow.PNG" alt="Milestone App Flow Diagram">
 
 ## Data Definitions
-A definition for each of the values for Filing Status can be found on our [Status Glossary](https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/Statuses.md).
-
 Definitions for elements on the Profile Page are listed below, but can also be viewed by hovering over the field name on the webpage.
 
 ### Profile Page
 
 | Metric | Definition |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Borough | Indicates which of the 5 NYC boroughs the building is located in |
-| Year Built | Indicates the year that the building was built (source: NYC Building Footprints) |
-| BIN Profile | Provides a link to the building’s profile page on Building Information System (BIS), where you can find more detail about every transaction that the building has with DOB |
-| Cyclomedia Street View | A photo of the building taken from the street by [Cyclomedia](https://www.cyclomedia.com/us). This may or may not show active construction work that corresponds with what is reported in the data |
-| 12-month building statistics | This section shows the count of all permits, complaints, inspections, violations, and accidents in the past 12 months from today that correspond to this building |
+| Job Number | The unique ID number assigned when the applicant submits the filing to the Department of Buildings. |
+| BIN Number | The Building Identification Number assigned by the Department of City Planning. |
+| Work Type | The type of work described in this filing. It could include plumbing, sprinkler, construction fence, or another type of work. |
+| Job Type | This indicates the extent of the work being done. NB means a new building is being built. A1 means that extensive alterations will be done resulting in a change of building occupancy. A2 means that alterations will be done but will not result in a change of building occupancy. A3 indicates that minor alterations will be done. |
+| Professional Certification | Yes indicates that the applicant is certifying that the work being performed complies with all applicable laws and codes. This job will then skip review by a plan examiner. |
+| Filing Status | The current status of the filing. A definition for each of the values for Filing Status can be found on our [Status Glossary](https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/Statuses.md). |
+| Job Description | The general description of the work being applied for. This field is free text, and is filled out by the applicant. |
 
+### Milestone Dates
+
+| Metric | Definition |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Filing Date | The date that the applicant submitted the filing to the Department of Buildings. |
+| CPE Assigned Date | The date that the filing was assigned to a Chief Plan Examiner for review or for delegation to a Plan Examiner. |
+| CPE Action Date | The date that the Chief Plan Examiner took action on the filing. |
+| PE Assigned Date | The date that the filing was assigned to a Plan Examiner. |
+| First Objection Date | The date that the filing was first returned to the applicant with objections. A filing may go through several cycles of being submitted, reviewed by a Plan Examiner, and returned to the applicant with objections. |
+| Latest Objection Date | The most recent date that the filing was returned to the applicant with objections. |
+| Name | Definition |
+| Name | Definition |
+| Name | Definition |
+| Name | Definition |
 
 ## Built With
 
