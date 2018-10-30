@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/01-dob-now-logo.jpg" alt="DOB NOW logo">
+<img align="right" width="100" height="100" src="https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/01-dob-now-logo.jpg" alt="DOB NOW logo">
 <br><br>
 
 ## DOB NOW: Build Filing Statuses
