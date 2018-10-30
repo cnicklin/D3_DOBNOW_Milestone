@@ -1,10 +1,10 @@
 # DRAFT - NEEDS EDITING
 
-## DOB Building Profiles
+## DOB NOW: Build Milestones
 
-The New York City Department of Buildings (DOB) Building Profiles application provides near real-time insight into construction and building code enforcement activities from both a citywide and a building-level perspective. The total number of construction permits issued, complaints generated, inspections conducted, violations issued, and construction-related accidents is aggregated at the building-level on a rolling 12-month period. This information gives the user a view into construction industry and DOB compliance activities throughout the five boroughs. 
+The New York City Department of Buildings (DOB) DOB NOW Build Milestones application displays basic details for selected DOB NOW Build filings on an interactive map of New York City. Each filing is represented as a dot on the map, and clicking the dot or the item on the list below brings you to a profile page that shows major milestone dates for that filing. The application is updated daily with the latest filings for Antenna, Curb Cut, Fence, Plumbing, Scaffold, Sidewalk Shed, Sign, Sprinkler, and Standpipe filings in DOB NOW.
 
-![Alt Text](https://github.com/NYCDOB/DOB_Dashboards/blob/Dev_2016/profiles_screen.PNG)
+![Milestone Map Page](https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/MapPage.PNG)
 
 ## Built With
 
