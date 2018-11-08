@@ -19,7 +19,7 @@ After a filing is submitted in DOB NOW, it will go through one of the following 
 * Minor Plan Change Approved: A minor change to the plans was approved.
 * Permit Issued: A permit was issued, allowing work to commence.
 * Permit Entire: All permits for this filing have been issued, allowing work to commence.
-* Signed Off: The work is complete, and the Department of Buildings has signed off on it.
+* Job Signed Off: The work is complete, and the Department of Buildings has signed off on it.
 
 ### Professional Certification Review
 * Pending QA Assignment: The filing has been submitted and it is waiting in a queue to be assigned to a QA Admin, who will check to make sure the filing is complete.
@@ -37,5 +37,5 @@ After a filing is submitted in DOB NOW, it will go through one of the following 
 * Minor Plan Change Approved: A minor change to the plans was approved.
 * Permit Issued: A permit was issued, allowing work to commence.
 * Permit Entire: All permits for this filing have been issued, allowing work to commence.
-* Signed Off: The work is complete, and the Department of Buildings has signed off on it.
+* Job Signed Off: The work is complete, and the Department of Buildings has signed off on it.
 
