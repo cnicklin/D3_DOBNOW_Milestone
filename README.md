@@ -44,6 +44,19 @@ Definitions for elements on the Profile Page are listed below, but can also be v
 | Initial Permit Issued | The first date that a permit was issued. Multiple permits can be issued for a job filing. |
 | Latest Permit Expiration | The expiration date for the most recent permit. Multiple permits can be issued for a job filing. |
 
+### Milestone Timelines
+
+To facilitate the design and layout of the Milestone Timeline in the Job Filing page, the following 6 timelines were created. This reduces confusion that may be caused when a simpler timeline skips over a date, such as when a standard plan exam job never receives an objection.
+<ol>
+    <li>STANDARD PLAN EXAM WITH NO OBJECTIONS (Initial Filing > CPE Assigned > CPE Action > PE Assigned > Plan Approved > Initial Permit Issued > Latest Permit Expiration)</li>
+    <li>PRO-CERT WITH NO QA FAILURES (Initial Filing > QA Supervisor Assigned > QA Admin Assigned > Plan Approved > Initial Permit Issued > Latest Permit Expiration)</li>
+    <li>STANDARD PLAN EXAM WITH OBJECTIONS AND FILING STATUS=”Objections” (Initial Filing > CPE Assigned > CPE Action > PE Assigned > First Objection > Latest Resubmission > Latest Objection > Plan Approved > Initial Permit Issued > Latest Permit Expiration)</li>
+    <li>PRO-CERT WITH QA FAILURES AND FILING STATUS=”QA Failed” (Initial Filing > QA Supervisor Assigned > QA Admin Assigned > Initial QA Failed > Latest Resubmission > Latest QA Failed > Plan Approved > Initial Permit Issued > Latest Permit Expiration)</li>
+    <li>STANDARD PLAN EXAM WITH OBJECTIONS AND FILING STATUS SOMETHING OTHER THAN ”Objections” (Initial Filing > CPE Assigned > CPE Action > PE Assigned > First Objection > Latest Objection > Latest Resubmission > Plan Approved > Initial Permit Issued > Latest Permit Expiration)</li>
+    <li>PRO-CERT WITH QA FAILURES AND FILING STATUS SOMETHING OTHER THAN ”QA Failed” (Initial Filing > QA Supervisor Assigned > QA Admin Assigned > Initial QA Failed > Latest QA Failed > Latest Resubmission > Plan Approved > Initial Permit Issued > Latest Permit Expiration)</li>
+</ol>
+
+
 ## Built With
 
 * [R](https://www.r-project.org/)
