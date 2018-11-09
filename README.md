@@ -47,7 +47,7 @@ Definitions for elements on the Profile Page are listed below, but can also be v
 
 ### Milestone Timelines
 
-To facilitate the design and layout of the Milestone Timeline in the Job Filing page, the following 6 timelines were created. This reduces confusion that may be caused when a simpler timeline skips over a date, such as when a standard plan exam job never receives an objection.
+To facilitate the design and layout of the Milestone Timeline in the Job Filing page, the following timelines were created. This reduces confusion that may be caused when a simpler timeline skips over a date, such as when a standard plan exam job never receives an objection.
 
 Standard Plan Exam Timelines
 <ol>
